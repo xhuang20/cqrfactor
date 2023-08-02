@@ -1,0 +1,6 @@
+useDynLib(cqrfactor)
+import(RcppEigen)
+importFrom(Rcpp, evalCpp)
+export("cqrfactor",
+       "factor_number",
+       "mmfactor")

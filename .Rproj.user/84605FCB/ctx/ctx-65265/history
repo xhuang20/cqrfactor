@@ -1,0 +1,54 @@
+library(cqrfactor)
+?cqrfactor::mmfactor
+library(cqrfactor)
+?cqrfactor::mmfactor
+library(cqrfactor)
+library(cqrfactor)
+?cqrfactor::mmfactor
+?cqrfactor::mmfactor
+library(cqrfactor)
+?cqrfactor::mmfactor
+library(cqrfactor)
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+?cqrfactor::mmfactor
+library(cqrfactor)
+library(cqrfactor)
+source("~/code/R/cqrfactor/R/cqrfactor.R")
+library(cqrfactor)
+library(cqrfactor)
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+library(cqrfactor)
+library(cqrfactor)
+library(cqrfactor)
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+?missing
+a = c(0.1,0.3,0.9,1.1)
+a>1
+a >0
+a <= 0
+a >= 1
+sum(a <= 0)
+sum(a <= 0 | a >= 1)
+a <= 0 | a >= 1
+library(cqrfactor)
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")
+source("~/Documents/Research/cqrfactor/program/testpkg/check two packages are the same.R")

@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# cqrfactor: An R package for composite quantile factor analysis
+
+This R package computes the factors and factor loadings for the composite 
+quantile factor model (CQFM) in Huang (2023). We also provide a function to 
+implement the two information criteria for factor number selection.
+
+## Installation
+
+You can install this package from [GitHub](https://github.com/xhuang20/cqrfactor.git)
+using
+
+```{r, eval=FALSE}
+devtools::install_github("xhuang20/cqrfactor")
+```
+
+## An example
+
+Consider the following example of estimating CQFM.
+
+```{r}
+library(cqrfactor)
+tlen = 20                                 # number of observations
+nlen = 30                                 # number of variables (cross-section units)
+
+q  = 5                                    # number of quanile positions in CQFM
+r  = 3                                    # number of factors in simulation
+tau = (1:q) / (q + 1)                     # compute q quantile positions
+tol = 1e-6                                # convergence tolerance 
+
+set.seed(123)                             # random seed for factor initialization
+lmat = matrix(rnorm(nlen*r), nlen, r)
+fmat = matrix(rnorm(tlen*r), tlen, r)
+u    = matrix(rnorm(tlen*nlen), tlen, nlen)
+dat  = fmat %*% t(lmat) + u               # The dimension of the data is tlen*nlen.
+
+result1 = cqrfactor(y = dat, q = q, r = r, tol = tol, maxit = 500, maxit_factor = 500, 
+                   maxit_loading = 100, minconver = 1, seed = 1)
+
+# Print the first few rows of the estimated factors.
+print(head(result1$fmat))
+
+# Print the first few rows of the esimated factor loadings.
+print(head(result1$lmat))
+```
+
+Next, consider the example of factor number estimation.
+
+```{r}
+result2 = factor_number(y = dat, q = q, tol = tol, maxit = 500, maxit_factor = 500, 
+                        maxit_loading = 500, minconver = 1, seed = 1, 
+                        max_number = 10) 
+
+# Print the estimated number of factors.
+print(result2$IC1_factor_number)
+```
+
+## Reference
+
+Huang, X. (2023) Composite quantile factor models, working paper.
+
