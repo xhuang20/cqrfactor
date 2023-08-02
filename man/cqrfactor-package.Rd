@@ -10,10 +10,12 @@
 }
 \details{
 
-The DESCRIPTION file:
-\packageDESCRIPTION{cqrfactor}
-\packageIndices{cqrfactor}
-~~ An overview of how to use the package, including the most important functions ~~
+%The DESCRIPTION file:
+%\packageDESCRIPTION{cqrfactor}
+%\packageIndices{cqrfactor}
+This package computes composite quantile factor and factor loadings for data with
+panel structure. The package also offers a function to estimate the number of
+factors based on the two information criteria discussed in Huang (2023).
 }
 \author{
 \packageAuthor{cqrfactor}
@@ -21,15 +23,8 @@ The DESCRIPTION file:
 Maintainer: \packageMaintainer{cqrfactor}
 }
 \references{
-~~ Literature or other references for background information ~~
+Huang, X. (2023) Composite quantile factor models, working paper.
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation ~~
-~~ directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}
+
+\keyword{  }
+

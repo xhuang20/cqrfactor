@@ -1,12 +1,14 @@
 Package: cqrfactor
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2023-07-27
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: An R package for estimating composite quantile factor models
+Version: 1.0.0
+Date: 2023-08-01
+Author: Xiao Huang
+Maintainer: Xiao Huang <xhuang3@kennesaw.edu>
+Description: This package computes factors and factor loadings in composite 
+    quantile factor models, and it also provides a function to estimate the 
+    number of factors. Model details are discussed in Huang (2023).
+License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.9), RcppEigen
 LinkingTo: Rcpp, RcppEigen
 Encoding: UTF-8
