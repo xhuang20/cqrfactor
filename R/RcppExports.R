@@ -56,19 +56,3 @@ mmfactor <- function(y, tau, q = 5L, r = 3L, tol = 1e-6, maxit = 500L, maxit_fac
     .Call('_cqrfactor_mmfactor', PACKAGE = 'cqrfactor', y, tau, q, r, tol, maxit, maxit_factor, maxit_loading, minconver, seed)
 }
 
-rcppeigen_hello_world <- function() {
-    .Call('_cqrfactor_rcppeigen_hello_world', PACKAGE = 'cqrfactor')
-}
-
-rcppeigen_outerproduct <- function(x) {
-    .Call('_cqrfactor_rcppeigen_outerproduct', PACKAGE = 'cqrfactor', x)
-}
-
-rcppeigen_innerproduct <- function(x) {
-    .Call('_cqrfactor_rcppeigen_innerproduct', PACKAGE = 'cqrfactor', x)
-}
-
-rcppeigen_bothproducts <- function(x) {
-    .Call('_cqrfactor_rcppeigen_bothproducts', PACKAGE = 'cqrfactor', x)
-}
-
