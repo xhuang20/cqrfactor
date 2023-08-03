@@ -13,7 +13,7 @@ mmfactor(
   maxit = 500L,
   maxit_factor = 500L,
   maxit_loading = 500L,
-  minconver = 1L,
+  convergence = 0L,
   seed = 1L
 )
 }
@@ -42,12 +42,12 @@ estimation. Defaults to 500.}
 \item{maxit_loading}{The maximum iteration number in the MM algorithm in factor
 loading estimation. Defaults to 500.}
 
-\item{minconver}{If the value is 1, the algorithm converges when the minimum
+\item{convergence}{If the value is 0, the algorithm converges when the minimum
 change among all estimated parameters between two iteration steps is less
-than or equal to tol. If the value is 0, the algorithm converges when the
+than or equal to tol. If the value is 1, the algorithm converges when the
 average change of all estimated parameters is less than or equal to tol.
-This can take a long computation time. If minconver = 0, set tol to a bigger
-number such as 1e-3. Defaults to 1.}
+This can take a long computation time. If minconver = 1, set tol to a bigger
+number such as 1e-3. Defaults to 0.}
 
 \item{seed}{A non-negative integer for random seed used in the C++ function \code{srand} to
 initialize factor values. If seed is -1, the initial value of the

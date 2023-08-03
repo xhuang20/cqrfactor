@@ -36,7 +36,7 @@ u    = matrix(rnorm(tlen*nlen), tlen, nlen)
 dat  = fmat %*% t(lmat) + u               # The dimension of the data is tlen*nlen.
 
 result1 = cqrfactor(y = dat, q = q, r = r, tol = tol, maxit = 500, maxit_factor = 500, 
-                   maxit_loading = 100, minconver = 1, seed = 1)
+                   maxit_loading = 100, convergence = 0, seed = 1)
 
 # Print the first few rows of the estimated factors.
 print(head(result1$fmat))
@@ -67,7 +67,7 @@ Next, consider the example of factor number estimation.
 
 ``` r
 result2 = factor_number(y = dat, q = q, tol = tol, maxit = 500, maxit_factor = 500, 
-                        maxit_loading = 500, minconver = 1, seed = 1, 
+                        maxit_loading = 500, convergence = 0, seed = 1, 
                         max_number = 10) 
 
 # Print the estimated number of factors.

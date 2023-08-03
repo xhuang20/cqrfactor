@@ -26,12 +26,12 @@ Quantile <- function(x, probs) {
 #'  estimation. Defaults to 500.
 #' @param maxit_loading The maximum iteration number in the MM algorithm in factor
 #'  loading estimation. Defaults to 500.
-#' @param minconver If the value is 1, the algorithm converges when the minimum
+#' @param convergence If the value is 0, the algorithm converges when the minimum
 #'  change among all estimated parameters between two iteration steps is less
-#'  than or equal to tol. If the value is 0, the algorithm converges when the 
+#'  than or equal to tol. If the value is 1, the algorithm converges when the 
 #'  average change of all estimated parameters is less than or equal to tol.
-#'  This can take a long computation time. If minconver = 0, set tol to a bigger
-#'  number such as 1e-3. Defaults to 1. 
+#'  This can take a long computation time. If minconver = 1, set tol to a bigger
+#'  number such as 1e-3. Defaults to 0. 
 #' @param seed A non-negative integer for random seed used in the C++ function \code{srand} to
 #'  initialize factor values. If seed is -1, the initial value of the
 #'  factors will be set to the eigenvectors of the outer product of the data
@@ -52,7 +52,7 @@ Quantile <- function(x, probs) {
 #' 
 #' }
 #' 
-mmfactor <- function(y, tau, q = 5L, r = 3L, tol = 1e-6, maxit = 500L, maxit_factor = 500L, maxit_loading = 500L, minconver = 1L, seed = 1L) {
-    .Call('_cqrfactor_mmfactor', PACKAGE = 'cqrfactor', y, tau, q, r, tol, maxit, maxit_factor, maxit_loading, minconver, seed)
+mmfactor <- function(y, tau, q = 5L, r = 3L, tol = 1e-6, maxit = 500L, maxit_factor = 500L, maxit_loading = 500L, convergence = 0L, seed = 1L) {
+    .Call('_cqrfactor_mmfactor', PACKAGE = 'cqrfactor', y, tau, q, r, tol, maxit, maxit_factor, maxit_loading, convergence, seed)
 }
 

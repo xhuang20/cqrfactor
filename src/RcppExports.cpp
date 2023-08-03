@@ -24,8 +24,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // mmfactor
-Rcpp::List mmfactor(const Eigen::MatrixXd& y, const Eigen::VectorXd& tau, int q, int r, double tol, int maxit, int maxit_factor, int maxit_loading, int minconver, int seed);
-RcppExport SEXP _cqrfactor_mmfactor(SEXP ySEXP, SEXP tauSEXP, SEXP qSEXP, SEXP rSEXP, SEXP tolSEXP, SEXP maxitSEXP, SEXP maxit_factorSEXP, SEXP maxit_loadingSEXP, SEXP minconverSEXP, SEXP seedSEXP) {
+Rcpp::List mmfactor(const Eigen::MatrixXd& y, const Eigen::VectorXd& tau, int q, int r, double tol, int maxit, int maxit_factor, int maxit_loading, int convergence, int seed);
+RcppExport SEXP _cqrfactor_mmfactor(SEXP ySEXP, SEXP tauSEXP, SEXP qSEXP, SEXP rSEXP, SEXP tolSEXP, SEXP maxitSEXP, SEXP maxit_factorSEXP, SEXP maxit_loadingSEXP, SEXP convergenceSEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -37,9 +37,9 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< int >::type maxit(maxitSEXP);
     Rcpp::traits::input_parameter< int >::type maxit_factor(maxit_factorSEXP);
     Rcpp::traits::input_parameter< int >::type maxit_loading(maxit_loadingSEXP);
-    Rcpp::traits::input_parameter< int >::type minconver(minconverSEXP);
+    Rcpp::traits::input_parameter< int >::type convergence(convergenceSEXP);
     Rcpp::traits::input_parameter< int >::type seed(seedSEXP);
-    rcpp_result_gen = Rcpp::wrap(mmfactor(y, tau, q, r, tol, maxit, maxit_factor, maxit_loading, minconver, seed));
+    rcpp_result_gen = Rcpp::wrap(mmfactor(y, tau, q, r, tol, maxit, maxit_factor, maxit_loading, convergence, seed));
     return rcpp_result_gen;
 END_RCPP
 }

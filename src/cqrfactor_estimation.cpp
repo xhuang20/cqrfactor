@@ -38,12 +38,12 @@ using Eigen::VectorXd;
 //'  estimation. Defaults to 500.
 //' @param maxit_loading The maximum iteration number in the MM algorithm in factor
 //'  loading estimation. Defaults to 500.
-//' @param minconver If the value is 1, the algorithm converges when the minimum
+//' @param convergence If the value is 0, the algorithm converges when the minimum
 //'  change among all estimated parameters between two iteration steps is less
-//'  than or equal to tol. If the value is 0, the algorithm converges when the 
+//'  than or equal to tol. If the value is 1, the algorithm converges when the 
 //'  average change of all estimated parameters is less than or equal to tol.
-//'  This can take a long computation time. If minconver = 0, set tol to a bigger
-//'  number such as 1e-3. Defaults to 1. 
+//'  This can take a long computation time. If minconver = 1, set tol to a bigger
+//'  number such as 1e-3. Defaults to 0. 
 //' @param seed A non-negative integer for random seed used in the C++ function \code{srand} to
 //'  initialize factor values. If seed is -1, the initial value of the
 //'  factors will be set to the eigenvectors of the outer product of the data
@@ -73,7 +73,7 @@ Rcpp::List mmfactor(const Eigen::MatrixXd & y,
                     int maxit = 500,
                     int maxit_factor = 500,
                     int maxit_loading = 500,
-                    int minconver = 1,
+                    int convergence = 0,
                     int seed = 1) {
   
   int i, j, s;
@@ -184,10 +184,10 @@ Rcpp::List mmfactor(const Eigen::MatrixXd & y,
         quantiles[s] = ((y - fmat0 * lmat.transpose()).cwiseProduct(A.block(s*t,0,t,n)).sum() + c(s) * n * t) / A.block(s*t,0,t,n).sum();
       }
       
-      if (minconver == 1) {
+      if (convergence == 0) {
         delta_lmat = Rcpp::min(Rcpp::abs(quantiles - quantiles0)) +
           (lmat - lmat0).cwiseAbs().minCoeff();
-      } else if (minconver == 0) {
+      } else if (convergence == 1) {
         delta_lmat = Rcpp::mean(Rcpp::abs(quantiles - quantiles0)) +
           (lmat - lmat0).cwiseAbs().mean();
       }
@@ -233,10 +233,10 @@ Rcpp::List mmfactor(const Eigen::MatrixXd & y,
         quantiles[s] = ((y - fmat * lmat0.transpose()).cwiseProduct(A.block(s*t,0,t,n)).sum() + c(s) * n * t) / A.block(s*t,0,t,n).sum();
       }
       
-      if (minconver == 1) {
+      if (convergence == 0) {
         delta_fmat = Rcpp::min(Rcpp::abs(quantiles - quantiles0)) +
           (fmat - fmat0).cwiseAbs().minCoeff();
-      } else if (minconver == 0) {
+      } else if (convergence == 1) {
         delta_fmat = Rcpp::mean(Rcpp::abs(quantiles - quantiles0)) +
           (fmat - fmat0).cwiseAbs().mean();
       }
