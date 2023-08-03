@@ -42,7 +42,7 @@ u    = matrix(rnorm(tlen*nlen), tlen, nlen)
 dat  = fmat %*% t(lmat) + u               # The dimension of the data is tlen*nlen.
 
 result1 = cqrfactor(y = dat, q = q, r = r, tol = tol, maxit = 500, maxit_factor = 500, 
-                   maxit_loading = 100, convergence = 0, seed = 1)
+                   maxit_loading = 500, convergence = 0, seed = 1)
 
 # Print the first few rows of the estimated factors.
 print(head(result1$fmat))

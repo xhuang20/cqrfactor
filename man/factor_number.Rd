@@ -82,7 +82,7 @@ u    = matrix(rnorm(tlen*nlen), tlen, nlen)
 dat  = fmat \%*\% t(lmat) + u 
 
 factor_number(y = dat, q = q, tol = 1e-6, maxit = 500, maxit_factor = 500, 
-              maxit_loading = 500, minconver = 1, seed = 1, 
+              maxit_loading = 500, convergence = 1, seed = 1, 
               standardize = FALSE, max_number = 10) 
 }
 }
