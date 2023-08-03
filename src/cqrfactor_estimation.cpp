@@ -176,7 +176,6 @@ Rcpp::List mmfactor(const Eigen::MatrixXd & y,
             c(s) * t * d3.col(s) / d4.col(s).coeff(i);                                          
         }
         
-        //lmat.row(i) = (ddenor.llt().solve(dnumer)).transpose();
         lmat.row(i) = (ddenor.completeOrthogonalDecomposition().solve(dnumer)).transpose();  
       }
       
@@ -225,7 +224,6 @@ Rcpp::List mmfactor(const Eigen::MatrixXd & y,
             c(s) * n * c3.col(s) / c4.col(s).coeff(j);                                         
         }
         
-        //fmat.row(j) = (imat.llt().solve(cnumer)).transpose();
         fmat.row(j) = (cdenor.completeOrthogonalDecomposition().solve(cnumer)).transpose();
       }
       
